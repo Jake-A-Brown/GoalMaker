@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GoalMaker/static/css/main.f433b4dc.css",
+    "main.js": "/GoalMaker/static/js/main.1d293754.js",
+    "index.html": "/GoalMaker/index.html",
+    "main.f433b4dc.css.map": "/GoalMaker/static/css/main.f433b4dc.css.map",
+    "main.1d293754.js.map": "/GoalMaker/static/js/main.1d293754.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f433b4dc.css",
+    "static/js/main.1d293754.js"
+  ]
+}
