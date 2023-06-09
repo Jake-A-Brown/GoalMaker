@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/GoalMaker/static/css/main.e6c13ad2.css",
-    "main.js": "/GoalMaker/static/js/main.b9f45c69.js",
+    "main.css": "/GoalMaker/static/css/main.2e1882b0.css",
+    "main.js": "/GoalMaker/static/js/main.0b5db55a.js",
     "index.html": "/GoalMaker/index.html",
-    "main.e6c13ad2.css.map": "/GoalMaker/static/css/main.e6c13ad2.css.map",
-    "main.b9f45c69.js.map": "/GoalMaker/static/js/main.b9f45c69.js.map"
+    "main.2e1882b0.css.map": "/GoalMaker/static/css/main.2e1882b0.css.map",
+    "main.0b5db55a.js.map": "/GoalMaker/static/js/main.0b5db55a.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.b9f45c69.js"
+    "static/css/main.2e1882b0.css",
+    "static/js/main.0b5db55a.js"
   ]
 }

@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
+    {/**  base mame added for the github page */}
     <BrowserRouter basename="/GoalMaker">
       <App />
     </BrowserRouter>
