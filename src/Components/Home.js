@@ -5,21 +5,28 @@ import ProgressBar from './ProgressBar';
 import './Home.css';
 
 const Home = ({ addGoal, goals, completeGoal, calculateProgress }) => {
-  const [showForm, setShowForm] = useState(false);
+  const [isFormVisible, setFormVisible] = useState(false);
 
-  const toggleForm = () => {
-    setShowForm(!showForm);
+  const toggleFormVisibility = () => {
+    setFormVisible(!isFormVisible);
   };
 
   return (
-    <div className="container">
+    <div className="card-container">
       <div className="card">
-        {showForm ? <GoalForm addGoal={addGoal} /> : null}
-        <button className="toggle-button" onClick={toggleForm}>
-          {showForm ? 'Hide Form' : 'Show Form'}
-        </button>
+        <div className="card-header">
+          {/* <h2>Goal Form</h2>
+          <button className="toggle-button" onClick={toggleFormVisibility}>
+            {isFormVisible ? 'Hide Form' : 'Show Form'}
+          </button> */}
+        </div>
+        {isFormVisible && (
+          <div className="card-body">
+            {/* <GoalForm addGoal={addGoal} /> */}
+          </div>
+        )}
       </div>
-      <GoalList goals={goals} completeGoal={completeGoal} />
+      {/* <GoalList goals={goals} completeGoal={completeGoal} /> */}
       <ProgressBar progress={calculateProgress()} />
     </div>
   );

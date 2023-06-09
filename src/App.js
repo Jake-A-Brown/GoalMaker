@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import CompletedGoalsPage from './Components/CompletedGoalsPage';
 import Home from './Components/Home';
+import GoalForm from './Components/GoalForm';
+import GoalList from './Components/GoalList';
 
 const App = () => {
   const [goals, setGoals] = useState([]);
@@ -33,19 +35,46 @@ const App = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
+            <Link to="/new">New</Link>
+          </li>
+          <li>
+            <Link to="/goals">Goals</Link>
+          </li>
+          <li>
             <Link to="/completed">Completed Goals</Link>
           </li>
         </ul>
       </nav>
-      <Routes>
-        <Route path="/" element={<Home addGoal={addGoal} goals={goals} completeGoal={completeGoal} calculateProgress={calculateProgress} />} />
-        <Route path="/completed" element={<CompletedGoalsPage completedGoals={completedGoals} />} />
-      </Routes>
+      <div className="content">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                addGoal={addGoal}
+                goals={goals}
+                completeGoal={completeGoal}
+                calculateProgress={calculateProgress}
+              />
+            }
+          />
+          <Route path="/new" element={<GoalForm addGoal={addGoal} />} />
+          <Route
+            path="/goals"
+            element={<GoalList goals={goals} completeGoal={completeGoal} />}
+          />
+          <Route
+            path="/completed"
+            element={<CompletedGoalsPage completedGoals={completedGoals} />}
+          />
+        </Routes>
+      </div>
     </div>
   );
 };
 
 export default App;
+
 
 
 

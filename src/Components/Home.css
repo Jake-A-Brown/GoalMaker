@@ -1,32 +1,41 @@
-.container {
-    margin-top: 1.25rem; /* equivalent to mt-5 in Bootstrap */
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
+.card-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  }
-  
-  .card {
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-  }
-  
-  .toggle-button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .toggle-button:hover {
-    background-color: #0056b3;
-  }
-  
+  gap: 20px;
+}
+
+.card {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.toggle-button {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+/* Add any additional styling as needed */
