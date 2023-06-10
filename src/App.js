@@ -1,4 +1,6 @@
 //main state that renders all components
+// App.js
+
 import './App.css';
 import React, { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
@@ -8,21 +10,31 @@ import GoalForm from './Components/GoalForm';
 import GoalList from './Components/GoalList';
 
 const App = () => {
-  const [goals, setGoals] = useState([]);
+  const [goalsByCategory, setGoalsByCategory] = useState({});
   const [completedGoals, setCompletedGoals] = useState([]);
 
-  const addGoal = (goal) => {
-    setGoals([...goals, goal]);
+  const addGoal = (goals) => {
+    setGoalsByCategory(goals);
   };
 
   const completeGoal = (goal) => {
-    setGoals(goals.filter((g) => g !== goal));
+    const category = goal.category;
+    const updatedGoals = goalsByCategory[category].filter((g) => g !== goal);
+    setGoalsByCategory({
+      ...goalsByCategory,
+      [category]: updatedGoals,
+    });
     setCompletedGoals([...completedGoals, goal]);
   };
 
   const calculateProgress = () => {
-    const totalGoals = goals.length + completedGoals.length;
-    const progress = (completedGoals.length / totalGoals) * 100;
+    let totalGoals = 0;
+    let completedCount = 0;
+    Object.values(goalsByCategory).forEach((categoryGoals) => {
+      totalGoals += categoryGoals.length;
+      completedCount += categoryGoals.filter((goal) => completedGoals.includes(goal)).length;
+    });
+    const progress = (completedCount / totalGoals) * 100;
     return progress.toFixed(2);
   };
 
@@ -52,16 +64,16 @@ const App = () => {
             element={
               <Home
                 addGoal={addGoal}
-                goals={goals}
+                goalsByCategory={goalsByCategory}
                 completeGoal={completeGoal}
                 calculateProgress={calculateProgress}
               />
             }
           />
-          <Route path="/new" element={<GoalForm addGoal={addGoal} />} />
+          <Route path="/new" element={<GoalForm addGoal={addGoal} goalsByCategory={goalsByCategory} />} />
           <Route
             path="/goals"
-            element={<GoalList goals={goals} completeGoal={completeGoal} />}
+            element={<GoalList goalsByCategory={goalsByCategory} completeGoal={completeGoal} />}
           />
           <Route
             path="/completed"
@@ -74,6 +86,7 @@ const App = () => {
 };
 
 export default App;
+
 
 
 

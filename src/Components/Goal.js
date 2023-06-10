@@ -10,14 +10,17 @@ const Goal = ({ goal, completeGoal }) => {
 
   return (
     <div>
-      <h3>{category}</h3>
-      <p>Goal name: {name}</p>
-      <p>Deadline: {deadline}</p>
-      <p>Description: {description}</p>
-      <button onClick={handleComplete}>Complete</button>
+      {name && (
+        <React.Fragment>
+          <h3>{category}</h3>
+          <p>Goal name: {name}</p>
+          <p>Deadline: {deadline}</p>
+          <p>Description: {description}</p>
+          <button onClick={handleComplete}>Complete</button>
+        </React.Fragment>
+      )}
     </div>
   );
 };
 
 export default Goal;
-

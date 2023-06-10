@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './GoalForm.css';
 
-const GoalForm = ({ addGoal }) => {
+const GoalForm = ({ addGoal, goalsByCategory }) => {
   const [goal, setGoal] = useState({
     name: '',
     category: '',
@@ -22,7 +22,10 @@ const GoalForm = ({ addGoal }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addGoal(goal);
+    const category = goal.category;
+    const updatedGoals = goalsByCategory[category] ? [...goalsByCategory[category], goal] : [goal];
+    const updatedCategories = { ...goalsByCategory, [category]: updatedGoals };
+    addGoal(updatedCategories);
     setGoal({ name: '', category: '', deadline: '', description: '' });
   };
 
@@ -85,7 +88,9 @@ const GoalForm = ({ addGoal }) => {
               className="form-control"
             ></textarea>
           </div>
-          <button type="submit" className="btn">Add Goal</button>
+          <button type="submit" className="btn">
+            Add Goal
+          </button>
         </form>
       )}
     </div>
@@ -93,3 +98,5 @@ const GoalForm = ({ addGoal }) => {
 };
 
 export default GoalForm;
+
+
