@@ -12,7 +12,8 @@ const GoalList = ({ goalsByCategory, completeGoal }) => {
           <h3>{category}</h3>
           <div className="goal-items">
             {goals.map((goal, index) => (
-              <Goal key={index} goal={goal} completeGoal={completeGoal} />
+             // Render the Goal component with the isCompletedPage prop set to false
+             <Goal key={index} goal={goal} completeGoal={() => completeGoal(goal)} isCompletedPage={false} />
             ))}
           </div>
         </div>

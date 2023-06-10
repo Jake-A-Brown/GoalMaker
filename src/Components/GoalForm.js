@@ -4,10 +4,10 @@ import './GoalForm.css';
 
 const GoalForm = ({ addGoal, goalsByCategory }) => {
   const [goal, setGoal] = useState({
-    name: '',
     category: '',
-    deadline: '',
+    name: '',
     description: '',
+    deadline: '',
   });
   const [isFormVisible, setFormVisible] = useState(false);
 
@@ -40,19 +40,6 @@ const GoalForm = ({ addGoal, goalsByCategory }) => {
       {isFormVisible && (
         <form onSubmit={handleSubmit} className="goal-form">
           <div className="form-group">
-            <label htmlFor="name">Goal Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={goal.name}
-              onChange={handleChange}
-              placeholder="Enter goal name"
-              required
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
             <label htmlFor="category">Category</label>
             <input
               type="text"
@@ -66,13 +53,14 @@ const GoalForm = ({ addGoal, goalsByCategory }) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="deadline">Deadline</label>
+            <label htmlFor="name">Goal Name</label>
             <input
-              type="date"
-              id="deadline"
-              name="deadline"
-              value={goal.deadline}
+              type="text"
+              id="name"
+              name="name"
+              value={goal.name}
               onChange={handleChange}
+              placeholder="Enter goal name"
               required
               className="form-control"
             />
@@ -87,6 +75,18 @@ const GoalForm = ({ addGoal, goalsByCategory }) => {
               placeholder="Enter description"
               className="form-control"
             ></textarea>
+          </div>
+          <div className="form-group">
+            <label htmlFor="deadline">Deadline</label>
+            <input
+              type="date"
+              id="deadline"
+              name="deadline"
+              value={goal.deadline}
+              onChange={handleChange}
+              required
+              className="form-control"
+            />
           </div>
           <button type="submit" className="btn">
             Add Goal

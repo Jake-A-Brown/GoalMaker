@@ -24,7 +24,8 @@ const CompletedGoalsPage = ({ completedGoals }) => {
         <div key={category}>
           <h3>{category}</h3>
           {goalsByCategory[category].map((goal) => (
-            <Goal key={goal.id} goal={goal} />
+            // Render the Goal component with the isCompletedPage prop set to true
+            <Goal key={goal.id} goal={goal} isCompletedPage={true} />
           ))}
         </div>
       ))}
