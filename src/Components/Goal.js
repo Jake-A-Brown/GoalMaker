@@ -1,5 +1,6 @@
 // A component to render each individual goal
 import React from 'react';
+import './Goal.css';
 
 const Goal = ({ goal, completeGoal, isCompletedPage }) => {
   const { name, category, deadline, description } = goal;
@@ -9,7 +10,8 @@ const Goal = ({ goal, completeGoal, isCompletedPage }) => {
   };
 
   return (
-    <div>
+    <div className="goal-container"> 
+    <div className='goal'>
       {name && (
         <React.Fragment>
           <h3>{category}</h3>
@@ -21,6 +23,7 @@ const Goal = ({ goal, completeGoal, isCompletedPage }) => {
           )}
         </React.Fragment>
       )}
+      </div>
     </div>
   );
 };

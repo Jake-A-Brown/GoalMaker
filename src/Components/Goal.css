@@ -1,0 +1,34 @@
+.goal-card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.goal-card.completed {
+  opacity: 0.6;
+}
+
+.goal-card h3 {
+  margin-top: 0;
+}
+
+.goal-card p {
+  margin-bottom: 8px;
+}
+
+.goal-card button {
+  display: block;
+  margin-top: 16px;
+}
+
+  
+  .goal button {
+    background-color: #1ee958;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
