@@ -1,27 +1,31 @@
-// A component to display the list of goals
-// GoalList.js
-import React from 'react';
-import Goal from './Goal';
-import './GoalList.css';
+import React from "react";
+import GoalRowItem from "./GoalRowItem";
 
-const GoalList = ({ goalsByCategory, completeGoal }) => {
+const GoalList = (props) => {
   return (
-    <div className="goal-list">
-      {Object.entries(goalsByCategory).map(([category, goals]) => (
-        <div key={category} className="goal-category">
-          <h3>{category}</h3>
-          <div className="goal-items">
-            {goals.map((goal, index) => (
-             // Render the Goal component with the isCompletedPage prop set to false
-             <Goal key={index} goal={goal} completeGoal={() => completeGoal(goal)} isCompletedPage={false} />
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
+    <table className="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Category</th>
+          <th scope="col">Description</th>
+          <th scope="col">Deadline</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.goals.map((goal) => (
+          <GoalRowItem
+            key={goal.rowNumber}
+            rowNumber={goal.rowNumber}
+            rowCategory={goal.rowCategory}
+            rowDescription={goal.rowDescription}
+            rowDeadline={goal.rowDeadline}
+            deleteGoal={props.deleteGoal}
+          />
+        ))}
+      </tbody>
+    </table>
   );
 };
 
 export default GoalList;
-
-
