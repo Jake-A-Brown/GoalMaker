@@ -1,24 +1,10 @@
-import React, { useState } from "react";
-import GoalList from "./GoalList";
+import React from "react";
+import RenderGoalListSolo from "./RenderGoalListSolo";
+
 // import { Link } from 'react-router-dom';
 
 function Dashboard() {
   // Fetch user's goals, progress, and deadlines
-  const [goals, setGoals] = useState([
-    {
-      rowNumber: null,
-      rowCategory: "",
-      rowDescription: "",
-      rowDeadline: "",
-    },
-  ]);
-
-  const deleteGoal = (deleteGoalRowNumber) => {
-    let filtered = goals.filter(function (value) {
-      return value.rowNumber !== deleteGoalRowNumber;
-    });
-    setGoals(filtered);
-  };
 
   return (
     <div className="dashboard">
@@ -32,14 +18,7 @@ function Dashboard() {
        * Goal Form: Allows users to add or edit goals.
        * **/}
 
-      <div className="mt-5 container">
-        <div className="card">
-          <div className="card-header">Your Goal's</div>
-          <div className="card-body">
-            <GoalList goals={goals} deleteGoal={deleteGoal} />
-          </div>
-        </div>
-      </div>
+       <RenderGoalListSolo />
 
       {/* <Link to="/new-goal-form">Create New Goal</Link> */}
     </div>

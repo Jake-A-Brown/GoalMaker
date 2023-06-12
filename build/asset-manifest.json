@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/GoalMaker/static/js/main.620cc8cf.js",
+    "main.js": "/GoalMaker/static/js/main.da658f8f.js",
     "index.html": "/GoalMaker/index.html",
-    "main.620cc8cf.js.map": "/GoalMaker/static/js/main.620cc8cf.js.map"
+    "main.da658f8f.js.map": "/GoalMaker/static/js/main.da658f8f.js.map"
   },
   "entrypoints": [
-    "static/js/main.620cc8cf.js"
+    "static/js/main.da658f8f.js"
   ]
 }
